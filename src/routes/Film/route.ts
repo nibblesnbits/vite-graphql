@@ -1,10 +1,11 @@
 import { type RouteDefinition } from "@/Router/withRelay";
 import Query, { type FilmQuery } from "./__generated__/FilmQuery.graphql";
-import FilmPage, { FilmQueryDef } from ".";
+import { FilmQueryDef } from "./FilmQueryDef";
+import { lazy } from "react";
 
 export default {
   path: "/film/:id?",
-  component: FilmPage,
+  component: lazy(() => import(".")),
   gqlQuery: FilmQueryDef,
   query: Query,
 } satisfies RouteDefinition<FilmQuery>;

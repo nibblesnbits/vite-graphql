@@ -1,9 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
-import { memo } from "react";
+import { memo, Suspense } from "react";
 import { Route, type RouteProps, useParams } from "wouter";
 
 import ErrorBoundary from "../ErrorBoundary";
 import type { RelayNavigatorProps } from "./withRelay";
+import LoadingScreen from "@/LoadingScreen";
 
 type RelayNavigationScreenProps = RouteProps &
   Readonly<{
@@ -53,11 +54,13 @@ export default function createRouterFactory(
   return function RouterWrapper({ screens }: RelayNavigatorProps) {
     return screens.map(({ path, component, ...r }) => (
       <Route key={path} path={path}>
-        <RelayNavigationRoute
-          Component={component}
-          {...r}
-          includeQueryString={includeQueryString}
-        />
+        <Suspense fallback={<LoadingScreen />}>
+          <RelayNavigationRoute
+            Component={component}
+            {...r}
+            includeQueryString={includeQueryString}
+          />
+        </Suspense>
       </Route>
     ));
   };

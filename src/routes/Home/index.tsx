@@ -1,20 +1,8 @@
-import { graphql } from "react-relay";
 import { type RelayRoute } from "@/Router/withRelay";
 import type { HomeQuery } from "./__generated__/HomeQuery.graphql";
 import Film from "@/components/Film";
 import FilmHover from "@/components/FilmHover";
 import { Suspense, useState } from "react";
-
-export const HomeQueryDef = graphql`
-  query HomeQuery {
-    allFilms {
-      films {
-        id
-        ...Film_item
-      }
-    }
-  }
-`;
 
 export default function HomePage({ data }: Readonly<RelayRoute<HomeQuery>>) {
   const films = data?.allFilms?.films?.filter((film) => film != null);
