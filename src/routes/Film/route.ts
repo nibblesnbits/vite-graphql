@@ -1,6 +1,6 @@
 import { type RouteDefinition } from "@/Router/withRelay";
 import Query, { type FilmQuery } from "./__generated__/FilmQuery.graphql";
-import { FilmQueryDef } from "./FilmQueryDef";
+import { FilmQueryDef } from "./FilmQuery";
 import { lazy } from "react";
 
 export default {

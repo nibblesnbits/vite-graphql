@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<d8b33c5e4f97f8657d08680df86bfe2f>>
+ * @generated SignedSource<<18ce412894bda7b000b1ded9c2066df1>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -17,7 +17,7 @@ export type FilmQuery$data = {
   readonly film: {
     readonly id: string;
     readonly title: string | null | undefined;
-    readonly " $fragmentSpreads": FragmentRefs<"Film_item">;
+    readonly " $fragmentSpreads": FragmentRefs<"FilmDetails_film">;
   } | null | undefined;
 };
 export type FilmQuery = {
@@ -53,7 +53,14 @@ v3 = {
   "kind": "ScalarField",
   "name": "title",
   "storageKey": null
-};
+},
+v4 = [
+  {
+    "kind": "Literal",
+    "name": "first",
+    "value": 5
+  }
+];
 return {
   "fragment": {
     "argumentDefinitions": (v0/*: any*/),
@@ -74,7 +81,7 @@ return {
           {
             "args": null,
             "kind": "FragmentSpread",
-            "name": "Film_item"
+            "name": "FilmDetails_film"
           }
         ],
         "storageKey": null
@@ -101,10 +108,99 @@ return {
           (v3/*: any*/),
           {
             "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "director",
-            "storageKey": null
+            "args": (v4/*: any*/),
+            "concreteType": "FilmCharactersConnection",
+            "kind": "LinkedField",
+            "name": "characterConnection",
+            "plural": false,
+            "selections": [
+              {
+                "alias": null,
+                "args": null,
+                "concreteType": "FilmCharactersEdge",
+                "kind": "LinkedField",
+                "name": "edges",
+                "plural": true,
+                "selections": [
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "cursor",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "Person",
+                    "kind": "LinkedField",
+                    "name": "node",
+                    "plural": false,
+                    "selections": [
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "name",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "height",
+                        "storageKey": null
+                      },
+                      (v2/*: any*/),
+                      {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "__typename",
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
+              },
+              {
+                "alias": null,
+                "args": null,
+                "concreteType": "PageInfo",
+                "kind": "LinkedField",
+                "name": "pageInfo",
+                "plural": false,
+                "selections": [
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "hasNextPage",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "endCursor",
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
+              }
+            ],
+            "storageKey": "characterConnection(first:5)"
+          },
+          {
+            "alias": null,
+            "args": (v4/*: any*/),
+            "filters": null,
+            "handle": "connection",
+            "key": "FilmDetails_film_characterConnection",
+            "kind": "LinkedHandle",
+            "name": "characterConnection"
           }
         ],
         "storageKey": null
@@ -112,16 +208,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "87fa2608afe1652bb24bca3f376b9d24",
+    "cacheID": "0c4a50c37de1735cb5807156d64b18eb",
     "id": null,
     "metadata": {},
     "name": "FilmQuery",
     "operationKind": "query",
-    "text": "query FilmQuery(\n  $id: ID!\n) {\n  film(id: $id) {\n    id\n    title\n    ...Film_item\n  }\n}\n\nfragment Film_item on Film {\n  id\n  title\n  director\n}\n"
+    "text": "query FilmQuery(\n  $id: ID!\n) {\n  film(id: $id) {\n    id\n    title\n    ...FilmDetails_film\n  }\n}\n\nfragment FilmDetails_film on Film {\n  id\n  characterConnection(first: 5) {\n    edges {\n      cursor\n      node {\n        name\n        height\n        id\n        __typename\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "998dd5d783abc6fdf33db810a5542165";
+(node as any).hash = "e25148a89b9b72fff30032643462f634";
 
 export default node;

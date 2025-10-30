@@ -6,7 +6,7 @@ export const FilmQueryDef = graphql`
     film(id: $id) {
       id
       title
-      ...Film_item
+      ...FilmDetails_film
     }
   }
 `;

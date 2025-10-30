@@ -1,6 +1,6 @@
 import { type RouteDefinition } from "@/Router/withRelay";
 import Query, { type HomeQuery } from "./__generated__/HomeQuery.graphql";
-import { HomeQueryDef } from "./HomeQueryDef";
+import { HomeQueryDef } from "./HomeQuery";
 import { lazy } from "react";
 
 export default {
