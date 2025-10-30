@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<2687b9d8c3402238b066d575aa8524d7>>
+ * @generated SignedSource<<1b362e8e4081e3accd31a6c6711dbd1e>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -15,7 +15,6 @@ export type FilmDetails_film$data = {
     readonly edges: ReadonlyArray<{
       readonly cursor: string;
       readonly node: {
-        readonly height: number | null | undefined;
         readonly name: string | null | undefined;
       } | null | undefined;
     } | null | undefined> | null | undefined;
@@ -130,13 +129,6 @@ return {
                   "alias": null,
                   "args": null,
                   "kind": "ScalarField",
-                  "name": "height",
-                  "storageKey": null
-                },
-                {
-                  "alias": null,
-                  "args": null,
-                  "kind": "ScalarField",
                   "name": "__typename",
                   "storageKey": null
                 }
@@ -180,6 +172,6 @@ return {
 };
 })();
 
-(node as any).hash = "90722612698ed92754fb6a2052e786d1";
+(node as any).hash = "b7eb50e628086bf2d9a962163c279a05";
 
 export default node;

@@ -17,7 +17,6 @@ export default function FilmDetails(props: { film: FilmDetails_film$key }) {
             cursor
             node {
               name
-              height
             }
           }
           pageInfo {
@@ -33,8 +32,9 @@ export default function FilmDetails(props: { film: FilmDetails_film$key }) {
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Height</th>
+          <th>
+            <em>Characters</em>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -42,7 +42,6 @@ export default function FilmDetails(props: { film: FilmDetails_film$key }) {
           edge?.node ? (
             <tr key={index}>
               <td>{edge.node.name}</td>
-              <td>{edge.node.height ?? "N/A"}</td>
             </tr>
           ) : null
         )}

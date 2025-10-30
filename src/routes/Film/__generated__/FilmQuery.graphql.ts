@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<18ce412894bda7b000b1ded9c2066df1>>
+ * @generated SignedSource<<bd00d8bf805d715564181d0cb7a6b997>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -144,13 +144,6 @@ return {
                         "name": "name",
                         "storageKey": null
                       },
-                      {
-                        "alias": null,
-                        "args": null,
-                        "kind": "ScalarField",
-                        "name": "height",
-                        "storageKey": null
-                      },
                       (v2/*: any*/),
                       {
                         "alias": null,
@@ -208,12 +201,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "0c4a50c37de1735cb5807156d64b18eb",
+    "cacheID": "54fc80f19fb4836fe052b0bdd042125a",
     "id": null,
     "metadata": {},
     "name": "FilmQuery",
     "operationKind": "query",
-    "text": "query FilmQuery(\n  $id: ID!\n) {\n  film(id: $id) {\n    id\n    title\n    ...FilmDetails_film\n  }\n}\n\nfragment FilmDetails_film on Film {\n  id\n  characterConnection(first: 5) {\n    edges {\n      cursor\n      node {\n        name\n        height\n        id\n        __typename\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}\n"
+    "text": "query FilmQuery(\n  $id: ID!\n) {\n  film(id: $id) {\n    id\n    title\n    ...FilmDetails_film\n  }\n}\n\nfragment FilmDetails_film on Film {\n  id\n  characterConnection(first: 5) {\n    edges {\n      cursor\n      node {\n        name\n        id\n        __typename\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}\n"
   }
 };
 })();

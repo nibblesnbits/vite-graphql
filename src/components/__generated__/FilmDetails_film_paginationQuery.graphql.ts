@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<b5fc24b189f28b5bff1587f55d83249c>>
+ * @generated SignedSource<<ff6eaf7d57774f323cc75ffab419a468>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -171,13 +171,6 @@ return {
                             "name": "name",
                             "storageKey": null
                           },
-                          {
-                            "alias": null,
-                            "args": null,
-                            "kind": "ScalarField",
-                            "name": "height",
-                            "storageKey": null
-                          },
                           (v3/*: any*/),
                           (v2/*: any*/)
                         ],
@@ -233,16 +226,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "8e2629d660739f2306f198ce66c3d8d0",
+    "cacheID": "5eb1bdce1e3b4567a48e989e130d682a",
     "id": null,
     "metadata": {},
     "name": "FilmDetails_film_paginationQuery",
     "operationKind": "query",
-    "text": "query FilmDetails_film_paginationQuery(\n  $count: Int = 5\n  $cursor: String\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    ...FilmDetails_film_1G22uz\n    id\n  }\n}\n\nfragment FilmDetails_film_1G22uz on Film {\n  id\n  characterConnection(after: $cursor, first: $count) {\n    edges {\n      cursor\n      node {\n        name\n        height\n        id\n        __typename\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}\n"
+    "text": "query FilmDetails_film_paginationQuery(\n  $count: Int = 5\n  $cursor: String\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    ...FilmDetails_film_1G22uz\n    id\n  }\n}\n\nfragment FilmDetails_film_1G22uz on Film {\n  id\n  characterConnection(after: $cursor, first: $count) {\n    edges {\n      cursor\n      node {\n        name\n        id\n        __typename\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "90722612698ed92754fb6a2052e786d1";
+(node as any).hash = "b7eb50e628086bf2d9a962163c279a05";
 
 export default node;
