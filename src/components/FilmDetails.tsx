@@ -2,7 +2,7 @@ import { graphql, usePaginationFragment } from "react-relay";
 import type { FilmDetails_film$key } from "./__generated__/FilmDetails_film.graphql";
 
 export default function FilmDetails(props: { film: FilmDetails_film$key }) {
-  const { data, loadNext } = usePaginationFragment(
+  const { data, loadNext, hasNext } = usePaginationFragment(
     graphql`
       fragment FilmDetails_film on Film
       @argumentDefinitions(
@@ -50,7 +50,7 @@ export default function FilmDetails(props: { film: FilmDetails_film$key }) {
       <tfoot>
         <tr>
           <td colSpan={2}>
-            {data.characterConnection?.pageInfo.hasNextPage ? (
+            {hasNext ? (
               <button
                 onClick={() => {
                   loadNext(5);
